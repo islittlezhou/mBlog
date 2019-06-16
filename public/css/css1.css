@@ -1,0 +1,117 @@
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
+.mr-t-20{
+    margin-top: 20px;
+}
+
+.mr-r-20{
+    margin-right: 20px;
+}
+
+.mr-b-20{
+    margin-bottom: 20px;
+}
+
+.mr-l-20{
+    margin-left: 20px;
+}
+
+.font-size-12{
+    font-size: 12px;
+}
+
+.font-size-13{
+    font-size: 13px;
+}
+
+.font-size-14{
+    font-size: 14px;
+}
+
+.font-size-16{
+    font-size: 16px;
+}
+
+.font-size-18{
+    font-size: 18px;
+}
+
+.loginText{
+    color: #000;
+    height: 34px;
+    line-height: 2.2;
+    border-bottom: 3px solid #eb7350;
+    margin-bottom: 12px;
+}
+
+.headerPanel .header{
+    height: 78px;
+    position: relative;
+}
+
+.headerPanel body{
+    height: 64px;
+}
+
+.headerPanel .header .img-own{
+    padding: 0px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    top: 36px;
+}
+
+.headerPanel .body p{
+    padding: 20px 10px 9px;
+    font-weight:bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.headerPanel .body p a:hover{
+    color: #eb7350;
+}
+
+.headerPanel .body{
+    background: white;
+}
+
+.clearfix:after,
+.clearfix:after{
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.headerPanel .body ul{
+    padding-bottom:10px;
+}
+
+.headerPanel .body ul li{
+    float: left;
+    text-align: center;
+    width: 33%;
+    cursor: pointer;
+}
+
+.headerPanel .body ul li:hover{
+    color: #eb7350;
+}
+
+.headerPanel .body ul li strong{
+    display: block;
+}
+
+.headerPanel .body ul li span{
+    display: block;
+}
+

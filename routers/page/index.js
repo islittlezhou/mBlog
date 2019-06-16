@@ -1,0 +1,45 @@
+const express = require('express');
+const router = express.Router();
+const renders = require('../../controllers/render');
+
+router.get('/', (req, res) => {
+    res.render('index');
+})
+
+router.get('/home', (req, res) => {
+    renders.renderHome(req, res, (result) => {
+        res.render('home',{
+            result
+        });
+    })
+})
+
+router.get('/mu', (req, res) => {
+    renders.renderOwn(req, res, (result) => {
+        res.render('mu',{
+            result
+        });
+    })
+})
+
+router.get('/mu/manage', (req, res) => {
+    renders.renderOwn(req, res, (result) => {
+        res.render('manage',{
+            result
+        });
+    })
+})
+
+router.get('/register', (req, res) => {
+    res.render('register');
+})
+
+router.get('/u/:number', (req, res) => {
+    res.render('u');
+})
+
+router.get('/sendmessage', (req, res) => {
+    res.render('sendmessage');
+})
+
+module.exports = router;

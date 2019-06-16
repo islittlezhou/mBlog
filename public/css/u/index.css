@@ -1,0 +1,144 @@
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
+ul,li{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-default{
+    background-color: #fff;
+}
+
+body{
+    background: #b4daf0;
+    background-image: url("https://img.t.sinajs.cn/t6/skin/skin048/images/body_repeat.png?id=1414052827385");
+    background-repeat: repeat-x;
+    background-position: center 0;
+}
+
+.container .jumbcen{
+    border-radius: 0px;
+}
+
+.headerContent .toolbars{
+    width: 100%;
+    background: white;
+}
+
+.headerContent .toolbars .inner{
+    width: 460px;
+    margin: auto;
+}
+
+.headerContent .toolbars .inner table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.headerContent .toolbars .inner table tr td{
+    width: 50%;
+    text-align: center;
+}
+
+.headerContent .toolbars .inner table tr td a{
+    position: relative;
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    line-height: 38px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    border-bottom: 3px solid white;
+}
+
+.headerContent .toolbars .inner table tr td a.a1{
+    border-bottom: 3px solid #eb7350;
+}
+
+.container .jumbcen .img-own{
+    padding: 0px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: -18px;
+}
+
+.container .jumbcen .imgWraper{
+    position: relative;
+    height:90px;
+}
+
+.headerContent .jumbtext{
+    color: white;
+    margin-bottom: 100px;
+    text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.headerContent .jumbtext strong{
+    font-size: 20px;
+}
+
+.headerContent .jumbtext span{
+    font-size: 14px;
+}
+
+.headerContent .leftBar ul li{
+    float: left;
+    width: 33%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.headerContent .leftBar ul{
+    padding: 10px;
+}
+
+.headerContent .leftBar ul li strong{
+    display: block;
+}
+
+.headerContent .leftBar ul li span{
+    display: block;
+}
+
+.headerContent .leftBar ul li:hover{
+    color: #eb7350;
+}
+
+.comlist{
+    margin-top: 20px;
+}
+.comlist .leftBar{
+    background: white;
+}
+
+.comlist.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.row-div{
+    margin-bottom: 10px;
+    background: white;
+    padding: 20px;
+}
+
+.row-div .footer{
+    float: right;
+}
+
+.row-div .footer span{
+    font-size: 12px;
+}
+
+.row-div .span-header span{
+    font-size: 13px;
+    font-width: bold;
+}

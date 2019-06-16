@@ -1,0 +1,44 @@
+.navbar-default{
+    background-color: #fff;
+}
+
+body{
+    background: #b4daf0;
+    background-image: url("https://img.t.sinajs.cn/t6/skin/skin048/images/body_repeat.png?id=1414052827385");
+    background-repeat: repeat-x;
+    background-position: center 0;
+}
+
+.form-group .input-st{
+    display: inline-block;
+    /*height: 40px;*/
+    /*background: red;*/
+}
+
+.form-group .input-st input{
+    display: none;
+}
+
+.row-div{
+    margin-bottom: 10px;
+    background: white;
+    padding: 20px;
+}
+
+.row-div .footer{
+    float: right;
+}
+
+.row-div .footer span{
+    font-size: 12px;
+}
+
+.row-div .span-header span{
+    font-size: 13px;
+    font-width: bold;
+}
+
+.headerPanel .text-center a{
+    color: #333;
+    text-decoration: none;
+}
