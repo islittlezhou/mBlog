@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
-
+https://github.com/islittlezhou/mBlog.git
 app.use('/upload', express.static('upload'));
 
 //检查是否登录
@@ -73,6 +73,6 @@ mongoose.connect('mongodb://localhost:27996/MyBlog', {useNewUrlParser: true}, (e
         return;
     }
     console.log('mongoDB数据库连接成功');
-    app.listen(3333);
+    app.listen(3333, '0.0.0.0');
     console.log('服务器启动成功 localhost:3333');
 });
