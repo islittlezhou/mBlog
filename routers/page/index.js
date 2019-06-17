@@ -3,6 +3,7 @@ const router = express.Router();
 const renders = require('../../controllers/render');
 
 router.get('/', (req, res) => {
+    console.log('已经访问到了111111222222233333333');
     res.render('index');
 })
 
