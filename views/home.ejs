@@ -128,7 +128,7 @@
                             <%= result[i].content %>
                         </div>
                         <div class="footer">
-                            <span><%= result[i].userId.account %></span>
+                            <span><%= result[i].userId?result[i].userId.account:'' %></span>
                             <!--<span><%= result[i].userId %></span>-->
                         </div>
                     </div>
