@@ -73,6 +73,6 @@ mongoose.connect('mongodb://localhost:27996/MyBlog', {useNewUrlParser: true}, (e
         return;
     }
     console.log('mongoDB数据库连接成功');
-    app.listen(3333, '0.0.0.0');
+    app.listen(3333, '120.79.199.14');
     console.log('服务器启动成功 localhost:3333');
 });
