@@ -56,7 +56,6 @@ router.post('/doPublish', (req ,res) => {
     form.uploadDir = 'upload';
 
     form.parse(req, (err, fields, files) => {
-
         const param = {
             fields: {
                 title: fields.title[0],
@@ -75,8 +74,20 @@ router.post('/doPublish', (req ,res) => {
 
         });
     });
+});
 
-
+router.post('/doUpdateUser', (req, res) => {
+    console.log('输出需要修改的参数');
+    console.log(req.body);
+    userController.doUpdate(req, res, req.body, (result) => {
+        if( result.success ){
+            res.redirect('/mu');
+        }else{
+            res.send({
+                success: false
+            });
+        }
+    });
 });
 
 module.exports = router;

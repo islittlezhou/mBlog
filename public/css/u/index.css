@@ -142,3 +142,30 @@ body{
     font-size: 13px;
     font-width: bold;
 }
+
+.manageSlidebar{
+    margin: 20px 0px;
+}
+
+.manageSlidebar a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+    padding-right:4px;
+    text-decoration: none;
+    border-right: 2px solid white;
+}
+
+.manageSlidebar .b-r-3{
+    border-right: 2px solid #eb7350;
+}
+
+.ContentWrap{
+    background: white;
+}
+
+.formWrap{
+    padding: 20px 120px 20px 10px;
+}

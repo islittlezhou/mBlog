@@ -126,5 +126,21 @@ module.exports.doPublish = function(param, cb){
 
 }
 
-
+module.exports.doUpdate = function(req, res, param, cb){
+    User.updateOne({_id: req.session.user._id},{$set: req.body}, (err, result) => {
+        console.log('输出修改数据地方双方都');
+        console.log(err);
+        if(err || result.nModified < 1){
+            cb({
+                success: false,
+                description: '更新失败'
+            });
+            return
+        }
+        cb({
+            success: true
+        });
+        console.log(result);
+    });
+}
 

@@ -16,7 +16,7 @@ router.get('/home', (req, res) => {
 })
 
 router.get('/mu', (req, res) => {
-    renders.renderOwn(req, res, (result) => {
+    renders.renderOwnContent(req, res, (result) => {
         res.render('mu',{
             result
         });
@@ -27,6 +27,22 @@ router.get('/mu/manage', (req, res) => {
     renders.renderOwn(req, res, (result) => {
         res.render('manage',{
             result
+        });
+    })
+})
+
+router.get('/mu/manage/bindEmail', (req, res) => {
+    renders.renderBindEmail(req, res, (result) => {
+        res.render('bindEmail',{
+            // result
+        });
+    })
+})
+
+router.get('/mu/manage/bindPhone', (req, res) => {
+    renders.renderBindPhone(req, res, (result) => {
+        res.render('bindPhone',{
+            // result
         });
     })
 })

@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/css1.css">
     <link rel="stylesheet" href="/css/u/index.css">
-
-    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -123,70 +121,13 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="manageSlidebar font-size-12">
-                            <a class="b-r-3" href="javascript:void(0)">编辑个人信息</a>
-                            <a href="/mu/manage/bindEmail">绑定邮箱</a>
+                            <a href="/mu/manage">编辑个人信息</a>
+                            <a class="b-r-3" href="javascript:void(0)">绑定邮箱</a>
                             <a href="/mu/manage/bindPhone">绑定手机</a>
                         </div>
                     </div>
                     <div class="col-sm-10">
-                        <div class="formWrap">
-                            <form action="/api/doUpdateUser" method="post">
-                                <div class="form-group">
-                                    <label for="realName">真实姓名</label>
-                                    <input value="<%= result.realName %>" name="realName" type="text" class="form-control" id="realName" placeholder="真实姓名">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nickName">昵称</label>
-                                    <input value="<%= result.nickName %>" name="nickName" type="text" class="form-control" id="nickName" placeholder="昵称">
-                                </div>
-                                <div class="form-group">
-                                    <label for="bothDay">生日</label>
-                                    <div class='input-group date' id='bothDay'>
-                                        <input name="bothDay" value="<%= result.bothDay?result.bothDay.toLocaleString():null %>" placeholder="选择日期" type='text' class="form-control" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="qq">qq</label>
-                                    <input value="<%= result.qq %>" name="qq" type="text" class="form-control" id="qq" placeholder="qq">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">手机号</label>
-                                    <input value="<%= result.phone %>" name="phone" type="text" class="form-control" id="phone" placeholder="手机号">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">邮箱</label>
-                                    <input value="<%= result.email %>" name="email" type="email" class="form-control" id="email" placeholder="邮箱">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Address">籍贯</label>
-                                    <input value="<%= result.Address %>" name="Address" type="text" class="form-control" id="Address" placeholder="籍贯">
-                                </div>
-                                <div class="form-group">
-                                    <label for="company">公司</label>
-                                    <input value="<%= result.company %>" name="company" type="text" class="form-control" id="company" placeholder="公司">
-                                </div>
-                                <div class="form-group">
-                                    <label for="blood">血型</label>
-                                    <input value="<%= result.blood %>" name="blood" type="text" class="form-control" id="blood" placeholder="血型">
-                                </div>
-                                <div class="form-group">
-                                    <label for="emotionStatus">感情状况</label>
-                                    <input value="<%= result.emotionStatus %>" name="emotionStatus" type="text" class="form-control" id="emotionStatus" placeholder="感情状况">
-                                </div>
-                                <div class="form-group">
-                                    <label for="sexHobby">性取向</label>
-                                    <input value="<%= result.sexHobby %>" name="sexHobby" type="text" class="form-control" id="sexHobby" placeholder="性取向">
-                                </div>
-                                <div class="form-group">
-                                    <label for="location">目前所在地</label>
-                                    <input value="<%= result.location %>" name="location" type="text" class="form-control" id="location" placeholder="目前所在地">
-                                </div>
-                                <button type="submit" class="btn btn-primary">保存</button>
-                            </form>
-                            </div>
+
                     </div>
                 </div>
             </div>
@@ -196,28 +137,5 @@
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/moment-with-locales.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-<script>
-    $(function () {
-        var picker1 = $('#bothDay').datetimepicker({
-            format: 'YYYY-MM-DD',
-            locale: moment.locale('zh-cn'),
-            //minDate: '2016-7-1'
-        });
-//        var picker2 = $('#datetimepicker2').datetimepicker({
-//            format: 'YYYY-MM-DD',
-//            locale: moment.locale('zh-cn')
-//        });
-        //动态设置最小值
-        picker1.on('dp.change', function (e) {
-//            picker2.data('DateTimePicker').minDate(e.date);
-        });
-        //动态设置最大值
-//        picker2.on('dp.change', function (e) {
-//            picker1.data('DateTimePicker').maxDate(e.date);
-//        });
-    })
-</script>
 </body>
 </html>
