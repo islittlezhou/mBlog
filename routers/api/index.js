@@ -83,9 +83,7 @@ router.post('/doUpdateUser', (req, res) => {
         if( result.success ){
             res.redirect('/mu');
         }else{
-            res.send({
-                success: false
-            });
+            res.redirect('/mu');
         }
     });
 });

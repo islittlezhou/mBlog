@@ -128,8 +128,8 @@
                             <%= result[i].content %>
                         </div>
                         <div class="footer">
-                            <span><%= result[i].userId?result[i].userId.account:'' %></span>
-                            <!--<span><%= result[i].userId %></span>-->
+                            <span><a target="_blank" href=<%=  result[i].userId?'/u/' + result[i].userId._id :'' %>><%= result[i].userId?result[i].userId.account:'' %></a></span>
+
                         </div>
                     </div>
                 <% } %>

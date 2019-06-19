@@ -52,7 +52,17 @@ router.get('/register', (req, res) => {
 })
 
 router.get('/u/:number', (req, res) => {
-    res.render('u');
+    console.log('查看参数3423434444444444');
+    console.log(req.param);
+    console.log(req.params);
+    const param = {
+        id: req.params.number
+    }
+    renders.renderUser(req, res, param, (result) => {
+        res.render('u',{
+            result
+        });
+    })
 })
 
 router.get('/sendmessage', (req, res) => {

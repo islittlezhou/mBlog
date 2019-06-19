@@ -117,20 +117,23 @@
                 </ul>
             </div>
             <div class="col-sm-8">
-                <div class=".table-responsive">
-                    <table class="table table-hover">
-                        <tbody>
-                        <% for( let i = 0; i < 14; i ++ ){ %>
-                        <tr>
-                            <td>第一列 + <%= i %></td>
-                            <td>第二列 + <%= i %></td>
-                            <td>第三列 + <%= i %></td>
-                            <td>第四列 + <%= i %></td>
-                            <td>第五列 + <%= i %></td>
-                        </tr>
-                        <% } %>
-                        </tbody>
-                    </table>
+                <div>
+                    <% for( let i = 0; i < result.length; i ++ ){ %>
+                    <div class="row-div clearfix">
+                        <div class="span-header">
+                            <span>
+                                <%= result[i].title %>
+                            </span>
+                        </div>
+                        <div class="span-content">
+                            <%= result[i].content %>
+                        </div>
+                        <div class="footer">
+                            <span><%= result[i].userId?result[i].userId.account:'' %></span>
+                            <!--<span><%= result[i].userId %></span>-->
+                        </div>
+                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>

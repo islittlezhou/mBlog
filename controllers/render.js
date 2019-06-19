@@ -42,3 +42,12 @@ module.exports.renderBindEmail = function(req, res, cb){
 module.exports.renderBindPhone = function(req, res, cb){
     cb();
 }
+
+module.exports.renderUser = function(req, res, param, cb){
+    Contents.find({userId: param.id}, (err,result) => {
+        console.log(param.id);
+        console.log('查看顶顶顶顶顶顶顶顶顶顶达到多');
+        console.log(result);
+        cb(result);
+    });
+}
