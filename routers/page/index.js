@@ -60,7 +60,9 @@ router.get('/u/:number', (req, res) => {
     }
     renders.renderUser(req, res, param, (result) => {
         res.render('u',{
-            result
+            result: result.result,
+            id: result.id,
+            isAttention: result.isAttention
         });
     })
 })

@@ -88,4 +88,13 @@ router.post('/doUpdateUser', (req, res) => {
     });
 });
 
+router.post('/doAttention', function(req ,res){
+    console.log('查看body参数');
+    console.log(req.body);
+    const param = req.body;
+    userController.doAttent(req, res, param, (result) => {
+        res.send(result);
+    });
+});
+
 module.exports = router;

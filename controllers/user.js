@@ -3,6 +3,7 @@ const User = require('../models/user');
 const Contents = require('../models/content');
 const multiparty = require('multiparty');
 const ImageUrl = require('../models/imgeurl');
+const attention = require('../models/attention');
 
 module.exports.doLogin = function(param, cb){
     // console.log(param);
@@ -144,3 +145,61 @@ module.exports.doUpdate = function(req, res, param, cb){
     });
 }
 
+module.exports.doAttent = function(req, res, param, cb){
+    const obj = {
+        userId: req.session.user._id,
+        attentionUserId: param.attentionId,
+        isAttention: param.isAttention
+    }
+
+    //首先查找是否有数据
+    attention.find({attentionUserId:param.attentionId,userId:req.session.user._id}, (err, result) => {
+        if( err ){
+
+            return
+        }
+        console.log('查看查到的数据');
+        console.log(result);
+
+        if( result.length == 0 ){
+            //添加数据
+            attention.create(obj, (err, result) => {
+                console.log('查看添加结果辅导费水电费');
+                console.log(err);
+                console.log(result);
+                setErrOrSuccess(err, cb);
+            });
+        }else{
+            //如果有酒更新数据
+            attention.updateMany(
+                {attentionUserId:param.attentionId,userId:req.session.user._id},
+                {
+                    $set:{
+                        isAttention: param.isAttention
+                    }
+                },
+                (err, result) => {
+                    console.log('查看修改后逇数据发送到发送到');
+                    console.log(err);
+                    console.log(result);
+                    setErrOrSuccess(err, cb);
+                });
+        }
+
+    })
+
+}
+
+const setErrOrSuccess = function (err, cb) {
+    if(err){
+        cb({
+            success: false,
+            description: '关注失败'
+        });
+        return
+    }
+    cb({
+        success: true,
+        description: '关注成功'
+    });
+}
