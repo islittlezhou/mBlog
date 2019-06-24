@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const userController = require('../../controllers/user');
 const multiparty = require('multiparty');
+const {getUserWriteInfo} = require('../../controllers/common.js');
 
 router.post('/doLogin', (req ,res) => {
 
@@ -95,6 +96,10 @@ router.post('/doAttention', function(req ,res){
     userController.doAttent(req, res, param, (result) => {
         res.send(result);
     });
+});
+
+router.get('/testing', function(req, res){
+    getUserWriteInfo(req.session);
 });
 
 module.exports = router;

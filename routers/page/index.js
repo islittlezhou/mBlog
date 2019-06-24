@@ -10,15 +10,18 @@ router.get('/', (req, res) => {
 router.get('/home', (req, res) => {
     renders.renderHome(req, res, (result) => {
         res.render('home',{
-            result
-        });
+            result:result.result,
+            info: result.info
+    });
     })
 })
+
 
 router.get('/mu', (req, res) => {
     renders.renderOwnContent(req, res, (result) => {
         res.render('mu',{
-            result
+            result:result.result,
+            info: result.info
         });
     })
 })
@@ -26,7 +29,9 @@ router.get('/mu', (req, res) => {
 router.get('/mu/manage', (req, res) => {
     renders.renderOwn(req, res, (result) => {
         res.render('manage',{
-            result
+            // result:result || {},
+            result:result.result || {},
+            info: result.info
         });
     })
 })
@@ -68,7 +73,13 @@ router.get('/u/:number', (req, res) => {
 })
 
 router.get('/sendmessage', (req, res) => {
-    res.render('sendmessage');
+    renders.renderSendMessages(req, res, (result) => {
+        console.log('查看数据水电费是的发送到发送到发送到发生的反倒是');
+        console.log(result);
+        res.render('sendmessage',{
+            info: result
+        });
+    })
 })
 
 module.exports = router;

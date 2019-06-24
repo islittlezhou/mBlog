@@ -4,34 +4,99 @@ const Contents = require('../models/content');
 const multiparty = require('multiparty');
 const ImageUrl = require('../models/imgeurl');
 const attention = require('../models/attention');
+const {getUserWriteInfo} = require('./common.js');
 
 module.exports.renderHome = function (req, res, cb) {
     const id = req.session.user._id;
 
-    Contents.find({}).populate([{path:'images'}, {path: 'userId'}]).then((result) => {
-        console.log('查看输出数据');
-        console.log(result);
-        console.log('45555555555******************');
-        console.log(JSON.stringify(result));
-        cb(result);
+    const a1 = new Promise((resolve, reject) => {
+        Contents.find({}).populate([{path:'images'}, {path: 'userId'}]).then((result) => {
+            console.log(JSON.stringify(result));
+            resolve(result);
+        })
     })
+
+    const a2 = new Promise((resolve, reject) => {
+        getUserWriteInfo(req.session, (result) => {
+            resolve(result);
+        })
+    });
+
+
+    Promise.all([a1, a2]).then((value) => {
+        console.log('查看最终value值11111111111111111111111111');
+        console.log(value);
+        cb({
+            result: value[0],
+            info: value[1]
+        })
+    });
 
 }
 
+module.exports.renderSendMessages = function(req, res, cb){
+    getUserWriteInfo(req.session, (result) => {
+        result.then((value) => {
+            cb(value);
+        })
+    })
+}
+
 module.exports.renderOwnContent = function (req, res, cb) {
-    Contents.find({userId: req.session.user._id}, (err,result) => {
-        console.log('查看顶顶顶顶顶顶顶顶顶顶达到多');
-        console.log(result);
-        cb(result);
+
+    const a1 = new Promise((resolve, reject) => {
+        Contents.find({userId: req.session.user._id}, (err,result) => {
+            console.log('查看顶顶顶顶顶顶顶顶顶顶达到多');
+            console.log(result);
+            resolve(result);
+        });
+    });
+
+    const a2 = new Promise((resolve, reject) => {
+        getUserWriteInfo(req.session, (result) => {
+            resolve(result);
+        })
+    });
+
+    Promise.all([a1, a2]).then((value) => {
+        console.log('查看最终value值11111111111111111111111111');
+        console.log(value);
+        cb({
+            result: value[0],
+            info: value[1]
+        })
     });
 
 }
 
 module.exports.renderOwn = function (req, res, cb) {
-    User.findById(req.session.user._id, (err, result) => {
-        console.log('查看顶顶顶顶顶顶顶顶顶顶达到多');
-        console.log(result);
-        cb(result);
+    // User.findById(req.session.user._id, (err, result) => {
+    //     console.log('查看顶顶顶顶顶顶顶顶顶顶达到多');
+    //     console.log(result);
+    //     cb(result);
+    // });
+
+    const a1 = new Promise((resolve, reject) => {
+        User.findById(req.session.user._id, (err, result) => {
+            console.log('查看顶顶顶顶顶顶顶顶顶顶达到多');
+            console.log(result);
+            resolve(result);
+        });
+    });
+
+    const a2 = new Promise((resolve, reject) => {
+        getUserWriteInfo(req.session, (result) => {
+            resolve(result);
+        })
+    });
+
+    Promise.all([a1, a2]).then((value) => {
+        console.log('查看最终value值11111111111111111111111111');
+        console.log(value);
+        cb({
+            result: value[0],
+            info: value[1]
+        })
     });
 
 }
