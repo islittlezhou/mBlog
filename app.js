@@ -37,6 +37,8 @@ app.use((req, res, next) => {
         next();
     }else{
         if( req.session.user ){
+            //设置全局模板数据
+            app.locals.user = req.session.user;
             if( req.url === '/' ){
                 res.redirect('/home');
             }else{

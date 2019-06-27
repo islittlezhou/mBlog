@@ -15,6 +15,7 @@ const schema = mongoose.Schema({
     emotionStatus: String,
     sexHobby: String,
     location: String,
+    avatorImg:[String]
     // attention: [{type: mongoose.Schema.Types.ObjectId, refs: 'users'}]
 });
 

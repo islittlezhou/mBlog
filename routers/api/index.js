@@ -102,4 +102,11 @@ router.get('/testing', function(req, res){
     getUserWriteInfo(req.session);
 });
 
+router.post('/upload/img', function (req, res) {
+    userController.uploadImg(req, res,(result) => {
+        console.log(result);
+        res.send(result);
+    })
+});
+
 module.exports = router;

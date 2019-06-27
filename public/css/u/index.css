@@ -79,6 +79,10 @@ body{
     height:90px;
 }
 
+.container .jumbcen .imgWraper img{
+    cursor: pointer;
+}
+
 .headerContent .jumbtext{
     color: white;
     margin-bottom: 60px;
@@ -179,5 +183,18 @@ body{
 }
 
 .dis-none{
+    display: none;
+}
+
+.upLoadImg label{
+    display: block;
+    width: 180px;
+    height: 54px;
+    line-height:54px;
+    cursor: pointer;
+    background: #b4daf0;
+}
+
+.upLoadImg label input{
     display: none;
 }
