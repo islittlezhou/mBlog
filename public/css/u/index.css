@@ -61,6 +61,10 @@ body{
     border-bottom: 3px solid #eb7350;
 }
 
+.headerContent .operate{
+    text-align: center;
+}
+
 .container .jumbcen .img-own{
     padding: 0px;
     border-radius: 50%;
@@ -75,9 +79,13 @@ body{
     height:90px;
 }
 
+.container .jumbcen .imgWraper img{
+    cursor: pointer;
+}
+
 .headerContent .jumbtext{
     color: white;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     text-shadow: 0 0 4px rgba(0,0,0,0.5);
 }
 
@@ -141,4 +149,52 @@ body{
 .row-div .span-header span{
     font-size: 13px;
     font-width: bold;
+}
+
+.manageSlidebar{
+    margin: 20px 0px;
+}
+
+.manageSlidebar a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+    padding-right:4px;
+    text-decoration: none;
+    border-right: 2px solid white;
+}
+
+.manageSlidebar .b-r-3{
+    border-right: 2px solid #eb7350;
+}
+
+.ContentWrap{
+    background: white;
+}
+
+.formWrap{
+    padding: 20px 120px 20px 10px;
+}
+
+.padding-r-4{
+    padding-right: 4px;
+}
+
+.dis-none{
+    display: none;
+}
+
+.upLoadImg label{
+    display: block;
+    width: 180px;
+    height: 54px;
+    line-height:54px;
+    cursor: pointer;
+    background: #b4daf0;
+}
+
+.upLoadImg label input{
+    display: none;
 }

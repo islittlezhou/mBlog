@@ -1,0 +1,22 @@
+package ServletPakge;import java.io.IOException;importjava.sql.Connection;importjava.sql.PreparedStatement;importjava.sql.ResultSet;importjava.sql.SQLException;import javax.servlet.ServletException;import javax.servlet.annotation.WebServlet;import javax.servlet.http.HttpServlet;import javax.servlet.http.HttpServletRequest;import javax.servlet.http.HttpServletResponse;import org.apache.log4j.Logger;
+import com.hg.jdbc.JdbcUtils_JNDI;Servlet implementation class ConnectionTest@WebServlet(ConnectionTest)public class ConnectionTest extends HttpServlet {log.debug(已经进入到 ConnectionTest 这个servlet中);try {
+private static final long serialVersionUID = 1L;日志private static Logger log = Logger.getLogger(ConnectionTest.class); public ConnectionTest() {super();}protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {Connection con = null;PreparedStatement pre = null;ResultSet rs = null;int row = 0;pre = con.prepareStatement(sql);pre.setObject(1, 韦昌辉);pre.setObject(2, 给);pre.setObject(4, 洪秀全);
+con = JdbcUtils_JNDI.getConnection();log.warn(已经成功获取到对象);con.setAutoCommit(false);String sql = insert into mysql.book values(null,,,,,,);;pre.setObject(3, 98);pre.setObject(5, 天地会);pre.setObject(6, 天京政权);
+row = pre.executeUpdate();log.info(已经执行 executeUpdate 方法);con.commit();System.out.println(row);} catch (SQLException e) {TODO Auto-generated catch blocke.printStackTrace();} finally{
+JdbcUtils_JNDI.release(con, pre, rs);
+log.error(已经关闭连接);
+}	
+}
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+doGet(request, response);
+}
+
+}
+
+
+
+
+  段祺瑞 55
+
+
+allowPublicKeyRetrieval=true&amp;

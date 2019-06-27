@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const userController = require('../../controllers/user');
 const multiparty = require('multiparty');
+const {getUserWriteInfo} = require('../../controllers/common.js');
 
 router.post('/doLogin', (req ,res) => {
 
@@ -56,7 +57,6 @@ router.post('/doPublish', (req ,res) => {
     form.uploadDir = 'upload';
 
     form.parse(req, (err, fields, files) => {
-
         const param = {
             fields: {
                 title: fields.title[0],
@@ -75,8 +75,38 @@ router.post('/doPublish', (req ,res) => {
 
         });
     });
+});
 
+router.post('/doUpdateUser', (req, res) => {
+    console.log('输出需要修改的参数');
+    console.log(req.body);
+    userController.doUpdate(req, res, req.body, (result) => {
+        if( result.success ){
+            res.redirect('/mu');
+        }else{
+            res.redirect('/mu');
+        }
+    });
+});
 
+router.post('/doAttention', function(req ,res){
+    console.log('查看body参数');
+    console.log(req.body);
+    const param = req.body;
+    userController.doAttent(req, res, param, (result) => {
+        res.send(result);
+    });
+});
+
+router.get('/testing', function(req, res){
+    getUserWriteInfo(req.session);
+});
+
+router.post('/upload/img', function (req, res) {
+    userController.uploadImg(req, res,(result) => {
+        console.log(result);
+        res.send(result);
+    })
 });
 
 module.exports = router;

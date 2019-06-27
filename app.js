@@ -13,7 +13,8 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    cookie: { maxAge: 60000 },
+    rolling: true
 }))
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -36,6 +37,8 @@ app.use((req, res, next) => {
         next();
     }else{
         if( req.session.user ){
+            //设置全局模板数据
+            app.locals.user = req.session.user;
             if( req.url === '/' ){
                 res.redirect('/home');
             }else{

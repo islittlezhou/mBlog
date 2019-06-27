@@ -14,7 +14,9 @@ const schema = mongoose.Schema({
     blood: String,
     emotionStatus: String,
     sexHobby: String,
-    location: String
+    location: String,
+    avatorImg:[String]
+    // attention: [{type: mongoose.Schema.Types.ObjectId, refs: 'users'}]
 });
 
 // schema.index({_id:1});
